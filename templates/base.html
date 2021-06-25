@@ -1,0 +1,115 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- Static -->
+    <link rel="stylesheet" type="text/css" href="/static/main.css">
+    <!-- Font -->
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Andika" />
+    <!-- Favicon -->
+    
+
+    <!-- <link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/favicon-16x16.png">
+    <link rel="manifest" href="/static/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff"> -->
+
+    <link rel='shortcut icon' type='image/x-icon' href='/static/favicon.ico' />
+    
+    
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    {% if title %}
+    <title>Mas Darma - {{ title }}</title>
+    {% else %}
+    <title>Mas Darma</title>
+    {% endif %}
+    <!-- Chatroom -->
+    <link rel="stylesheet" href="https://npm-scalableminds.s3.eu-central-1.amazonaws.com/@scalableminds/chatroom@master/dist/Chatroom.css" />
+      
+</head>
+
+<body>
+  
+    <header class="site-header">
+      
+        <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
+          <div class="container">
+            <a style="text-decoration: none;" href="/"><img style="float:left;" class ="logo" src="/static/favicon-32x32.png" alt=""></a>
+            <a class="navbar-brand mr-4" href="/"><b>Mas Darma</b></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarToggle">
+
+                <div class="navbar-nav mr-auto">
+                  <a class="nav-item nav-link " href="{% url 'index' %}"><b>Beranda</b></a>
+                  <a class="nav-item nav-link " href="{% url 'chat' %}"><b>Ngobrol</b></a>
+                  <a class="nav-item nav-link " href="{% url 'about' %}"><b>Tentang Mas Darma</b></a>
+                
+                </div>
+
+            </div>
+          </div>
+        </nav>
+      </header>
+<br>
+{% block content %}
+
+{% endblock content %}
+
+      <br>
+
+      <footer>
+        <div class="container">
+          <div class="row">
+            <div class="col">
+              <a style="text-decoration: none;" href="/"><img style="float:left;" class ="logo" src="/static/favicon-32x32.png" alt=""></a>
+              <a style="text-decoration: none;" href="/"><h3 class="footer-link">Mas Darma</h3></a>
+              <small>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Obrolan Informatif Tentang Perkuliahan</small>
+     
+            </div>    
+              </div>
+            </div>
+          </div>
+          <hr>
+          <p style="margin-bottom:10px;text-align: center;">Didesain dengan <i class="fa fa-heart" aria-hidden="true"></i></p> 
+            <p style="margin-bottom:10px;text-align: center;">© 2020 All Rights Reserved Terms of Use and Privacy Policy</p>
+        </div>
+        
+      </footer>
+
+      <!-- jQuery & CSS Bootstrap -->
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      
+    {% block scripts %}
+    <script>
+
+      //skrip untuk membuat class pada table row (tr) dapat di klik sebagai link
+          jQuery(document).ready(function($) {
+            $(".clickable-row").click(function() {
+                window.location = $(this).data("href");
+            });
+        });
+
+
+        // skrip untuk memunculkan tooltip pada tombol
+        $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+      })
+    </script>
+    
+  
+    {% endblock scripts %}
+  </body>
+</html>
