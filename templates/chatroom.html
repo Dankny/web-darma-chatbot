@@ -15,19 +15,20 @@ input[type=text] {
   width:100%;
 }
 </style>
-        <div class="chat-container"></div>
-      
-        <script src="https://npm-scalableminds.s3.eu-central-1.amazonaws.com/@scalableminds/chatroom@master/dist/Chatroom.js"/></script>
-        <script type="text/javascript">
-          var chatroom = new window.Chatroom({
-            host: "http://localhost:5005",
-            title: "Darma",
-            container: document.querySelector(".chat-container"),
-            welcomeMessage: "Hey, selamat datang! Saya Darma, ada yang bisa saya bantu?"
-          });
-          chatroom.openChat();
-        </script>
-
+    <div class="chat-container">
+      <script src="https://npm-scalableminds.s3.eu-central-1.amazonaws.com/@scalableminds/chatroom@master/dist/Chatroom.js"/></script>
+      <script type="text/javascript">
+        var chatroom = new window.Chatroom({
+          host: "http://34.101.165.123/rasa",
+          title: "Darma",
+          container: document.querySelector(".chat-container"),
+          welcomeMessage: "Hey, selamat datang! Saya Darma, ada yang bisa saya bantu?"
+        });
+        chatroom.openChat();
+      </script>  
+      <h4>Catatan: Terkadang Darma butuh beberapa waktu untuk mencari jawabanmu, jadi mohon bersabar ya :)</h4>
+    </div>
+        
 
 {% endblock content %}
       
